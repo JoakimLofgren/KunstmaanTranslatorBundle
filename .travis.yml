@@ -11,9 +11,10 @@ matrix:
 
 
 before_script:
-    - composer install --dev --prefer-source
-    - mkdir -p ~/build/Kunstmaan/KunstmaanTranslatorBundle/Tests/app/cache/phpunit/translations/
-    - chmod 755 ~/build/Kunstmaan/KunstmaanTranslatorBundle/Tests/app/cache/phpunit/translations/
+  - composer selfupdate
+  - COMPOSER_ROOT_VERSION=2.4 composer --prefer-source --dev install
+  - mkdir -p ~/build/Kunstmaan/KunstmaanTranslatorBundle/Tests/app/cache/phpunit/translations/
+  - chmod 755 ~/build/Kunstmaan/KunstmaanTranslatorBundle/Tests/app/cache/phpunit/translations/
 
 script: phpunit --debug
 
